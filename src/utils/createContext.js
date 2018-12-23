@@ -29,7 +29,7 @@ const createContext = (...hocs) => {
     // Expose specified props as state.
     withPropsOnChange(
       (props, nextProps) => !shallowEqual(pickState(props), pickState(nextProps)),
-      // exposed,
+      // Expose props as state.
       props => ({ state: pickState(props) })
     )
   ])(render)
