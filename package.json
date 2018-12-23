@@ -1,0 +1,53 @@
+{
+  "name": "play-with-react-context",
+  "version": "1.0.0",
+  "description": "Testing how react context api handle changes of value(at Context.Provider).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subuta/play-with-react-context.git"
+  },
+  "keywords": [],
+  "author": "subuta <shunta.3110@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subuta/play-with-react-context/issues"
+  },
+  "homepage": "https://github.com/subuta/play-with-react-context#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^23.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "recompose": "^0.30.0",
+    "sinon": "^7.2.2",
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/scripts/jest.setup.js"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "lodash": "^4.17.11"
+  }
+}

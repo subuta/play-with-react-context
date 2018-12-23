@@ -1,0 +1,10 @@
+/* eslint-disable */
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import {createSerializer} from 'enzyme-to-json';
+
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
+
+Enzyme.configure({ adapter: new Adapter() })
+
+expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }))
