@@ -1,12 +1,16 @@
 import React from 'react'
 
 import {
+  compose,
   withStateHandlers
 } from 'recompose'
 
-import createContext from './utils/createContext'
+import { deriveStateFromProps } from './utils/reactContext'
 
-const { Context, Consumer, Provider } = createContext(
+const Context = React.createContext({})
+const { Consumer } = Context
+
+const enhance = compose(
   withStateHandlers(
     () => ({
       shops: []
@@ -18,8 +22,16 @@ const { Context, Consumer, Provider } = createContext(
         }
       }
     }
-  )
+  ),
+  deriveStateFromProps()
 )
+
+// Wrap & render children with specified context provider.
+const Provider = enhance(({ state, children }) => {
+  return (
+    <Context.Provider value={state}>{children}</Context.Provider>
+  )
+})
 
 export {
   Context,
