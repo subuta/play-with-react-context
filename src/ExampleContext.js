@@ -1,20 +1,12 @@
 import React from 'react'
-import { createContext } from 'react'
 
 import {
-  compose,
   withStateHandlers
 } from 'recompose'
 
-import {
-  zipState,
-  renderProvider
-} from './utils/reactContext'
+import createContext from './utils/createContext'
 
-const Context = createContext({})
-const { Consumer, Provider } = Context
-
-const ExampleProvider = compose(
+const { Context, Consumer, Provider } = createContext(
   withStateHandlers(
     () => ({
       shops: []
@@ -26,14 +18,13 @@ const ExampleProvider = compose(
         }
       }
     }
-  ),
-  zipState(['shops', 'setShops'])
-)(renderProvider(Provider))
+  )
+)
 
 export {
   Context,
   Consumer as ExampleConsumer,
-  ExampleProvider
+  Provider as ExampleProvider
 }
 
 export default Context

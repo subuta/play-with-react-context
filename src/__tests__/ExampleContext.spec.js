@@ -39,7 +39,7 @@ test('should render with size.', () => {
   expect(child.callCount).toBe(1)
 
   // Should update child on setState of itself.
-  props.setShops([])
+  props.setShops([{name: 'hoge'}])
   expect(child.callCount).toBe(2)
 
   // Should exports props
